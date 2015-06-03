@@ -63,4 +63,13 @@ describe("Game", function() {
     var testGame = new Game(testPlayer1, testPlayer2, testBoard);
     expect(testGame.board.spaces[5].x_coordinate).to.equal(2);
   });
+
+  it("starts with 'X'", function() {
+    var testPlayer1 = new Player("X");
+    var testPlayer2 = new Player("O");
+    var testBoard = new Board([]);
+    testBoard.create();
+    var testGame = new Game(testPlayer1, testPlayer2, testBoard);
+    expect(testGame.whoseTurn).to.equal('X');
+  });
 });

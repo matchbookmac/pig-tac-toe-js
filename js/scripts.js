@@ -66,3 +66,12 @@ Board.prototype.winner = function(player) {
   }
 
 };
+
+Game.prototype.nextTurn = function() {
+  if (this.whoseTurn === 'X') {
+    this.whoseTurn = 'O';
+  } else if (this.whoseTurn==='O') {
+    this.whoseTurn = 'X';
+  } else {
+  }
+};

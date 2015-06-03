@@ -72,4 +72,14 @@ describe("Game", function() {
     var testGame = new Game(testPlayer1, testPlayer2, testBoard);
     expect(testGame.whoseTurn).to.equal('X');
   });
+
+  it("advances to the next player", function() {
+    var testPlayer1 = new Player("X");
+    var testPlayer2 = new Player("O");
+    var testBoard = new Board([]);
+    testBoard.create();
+    var testGame = new Game(testPlayer1, testPlayer2, testBoard);
+    testGame.nextTurn();
+    expect(testGame.whoseTurn).to.equal('O');
+  });
 });

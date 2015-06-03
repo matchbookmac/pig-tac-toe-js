@@ -36,3 +36,12 @@ Board.prototype.create = function() {
   var space9 = new Space(3, 3, "");
   this.spaces.push(space9);
 };
+
+Board.prototype.winner = function(player) {
+  if (this.spaces[0].markedBy===player &&
+    this.spaces[3].markedBy===player &&
+    this.spaces[6].markedBy===player) {
+      return true;}
+
+    };
+    

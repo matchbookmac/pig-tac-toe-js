@@ -89,6 +89,4 @@ Game.prototype.gameOver = function() {
   } else {
     return false;
   }
-
-
 };

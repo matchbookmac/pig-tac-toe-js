@@ -3,6 +3,7 @@ function Game(player1, player2, board) {
   this.player2 = player2;
   this.board = board;
   this.whoseTurn = 'X';
+  this.turnCounter = 0;
 }
 
 function Board(spaces) {
@@ -74,4 +75,20 @@ Game.prototype.nextTurn = function() {
     this.whoseTurn = 'X';
   } else {
   }
+  this.turnCounter+=1;
+};
+
+Game.prototype.gameOver = function() {
+
+  if (this.board.winner(this.player1)) {
+    return true;
+  } else if (this.board.winner(this.player2)) {
+    return true;
+  } else if (this.turnCounter===9) {
+    return true;
+  } else {
+    return false;
+  }
+
+
 };

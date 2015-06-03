@@ -82,4 +82,13 @@ describe("Game", function() {
     testGame.nextTurn();
     expect(testGame.whoseTurn).to.equal('O');
   });
+
+  it("checks to see if the game is over", function() {
+    var testPlayer1 = new Player("X");
+    var testPlayer2 = new Player("O");
+    var testBoard = new Board([]);
+    testBoard.create();
+    var testGame = new Game(testPlayer1, testPlayer2, testBoard);
+    expect(testGame.gameOver()).to.equal(false);
+  });
 });

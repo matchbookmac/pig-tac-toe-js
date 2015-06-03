@@ -23,3 +23,11 @@ describe('Space', function() {
     expect(testSpace.markedBy).to.equal(testPlayer);
   });
 });
+
+describe("Board", function() {
+  it("creates 9 spaces when it is initialized", function() {
+    var testBoard = new Board([]);
+    testBoard.create();
+    expect(testBoard.spaces[5].x_coordinate).to.equal(2);
+  });
+});

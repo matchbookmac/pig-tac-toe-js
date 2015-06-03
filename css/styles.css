@@ -1,0 +1,7 @@
+.bank-account:hover {
+  cursor: pointer;
+}
+
+#account-info {
+  display: none;
+}

@@ -53,3 +53,14 @@ describe("Board", function() {
     expect(testBoard.winner(testPlayer1)).to.equal(false);
   });
 });
+
+describe("Game", function() {
+  it("creates two players and a board when a new game is started", function() {
+    var testPlayer1 = new Player("X");
+    var testPlayer2 = new Player("O");
+    var testBoard = new Board([]);
+    testBoard.create();
+    var testGame = new Game(testPlayer1, testPlayer2, testBoard);
+    expect(testGame.board.spaces[5].x_coordinate).to.equal(2);
+  });
+});

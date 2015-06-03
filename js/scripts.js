@@ -1,3 +1,9 @@
+function Game(player1, player2, board) {
+  this.player1 = player1;
+  this.player2 = player2;
+  this.board = board;
+}
+
 function Board(spaces) {
   this.spaces = spaces;
 }
@@ -50,7 +56,7 @@ Board.prototype.winner = function(player) {
     return true;
   } else if (this.spaces[6].markedBy===player && this.spaces[7].markedBy===player && this.spaces[8].markedBy===player) {
     return true;
-  } else if (this.spaces[0].markedBy===player && this.spaces[4].markedBy===player & this.spaces[8].markedBy===player) {
+  } else if (this.spaces[0].markedBy===player && this.spaces[4].markedBy===player && this.spaces[8].markedBy===player) {
     return true;
   } else if (this.spaces[2].markedBy===player && this.spaces[4].markedBy===player && this.spaces[6].markedBy===player) {
     return true;

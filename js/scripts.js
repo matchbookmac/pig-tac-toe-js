@@ -38,10 +38,24 @@ Board.prototype.create = function() {
 };
 
 Board.prototype.winner = function(player) {
-  if (this.spaces[0].markedBy===player &&
-    this.spaces[3].markedBy===player &&
-    this.spaces[6].markedBy===player) {
-      return true;}
+  if (this.spaces[0].markedBy===player && this.spaces[3].markedBy===player && this.spaces[6].markedBy===player) {
+    return true;
+  } else if (this.spaces[1].markedBy===player && this.spaces[4].markedBy===player && this.spaces[7].markedBy===player) {
+    return true;
+  } else if (this.spaces[2].markedBy===player && this.spaces[5].markedBy===player &&  this.spaces[8].markedBy===player) {
+    return true;
+  } else if (this.spaces[0].markedBy===player && this.spaces[1].markedBy===player && this.spaces[2].markedBy===player) {
+    return true;
+  } else if (this.spaces[3].markedBy===player && this.spaces[4].markedBy===player && this.spaces[5].markedBy===player) {
+    return true;
+  } else if (this.spaces[6].markedBy===player && this.spaces[7].markedBy===player && this.spaces[8].markedBy===player) {
+    return true;
+  } else if (this.spaces[0].markedBy===player && this.spaces[4].markedBy===player & this.spaces[8].markedBy===player) {
+    return true;
+  } else if (this.spaces[2].markedBy===player && this.spaces[4].markedBy===player && this.spaces[6].markedBy===player) {
+    return true;
+  } else {
+    return false;
+  }
 
-    };
-    
+};

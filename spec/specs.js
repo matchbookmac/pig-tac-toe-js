@@ -41,4 +41,15 @@ describe("Board", function() {
     testBoard.spaces[6].mark_by(testPlayer1)
     expect(testBoard.winner(testPlayer1)).to.equal(true);
   });
+
+  it("determines if there isn't a winner at a given point in the game", function() {
+    var testBoard = new Board([]);
+    var testPlayer1 = new Player("X")
+    var testPlayer2 = new Player("O")
+    testBoard.create();
+    testBoard.spaces[1].mark_by(testPlayer1);
+    testBoard.spaces[3].mark_by(testPlayer1)
+    testBoard.spaces[7].mark_by(testPlayer1)
+    expect(testBoard.winner(testPlayer1)).to.equal(false);
+  });
 });

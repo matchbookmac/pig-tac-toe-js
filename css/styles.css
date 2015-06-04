@@ -4,8 +4,8 @@ td:hover {
   color: #fff;
 }
 table {
-    overflow:hidden;
-    table-layout:fixed;
+    overflow: hidden;
+    table-layout: fixed;
     border: 2px solid black;
 }​
 
@@ -14,13 +14,9 @@ td {
   white-space: nowrap;
 }
 
-.col-md-6 {
-  /*width: 540px;*/
-}
-
 td {
-  text-align:center;
-  font-size:25px;
+  text-align: center;
+  font-size: 1.5em;
   border: 1px solid black;
 }
 

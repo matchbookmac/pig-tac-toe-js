@@ -59,13 +59,13 @@ describe("Game", function() {
 
   it("starts with 'X'", function() {
     var testGame = new Game();
-    expect(testGame.whoseTurn).to.equal('X');
+    expect(testGame.whoseTurn.mark).to.equal('X');
   });
 
   it("advances to the next player", function() {
     var testGame = new Game();
     testGame.nextTurn();
-    expect(testGame.whoseTurn).to.equal('O');
+    expect(testGame.whoseTurn.mark).to.equal('O');
   });
 
   it("checks to see if the game is over", function() {

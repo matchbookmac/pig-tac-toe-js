@@ -6,19 +6,14 @@ $( document ).ready(function ( ) {
   var player1 = game.player1;
   var player2 = game.player2;
 
-  // delayResize();
-
   var spaces = $('table#play-board').children().find('td');
   for (var i = 0; i <= 8; i++ ) {
     var space = $(spaces[i]);
     space.attr("id", i);
   };
 
-
   for (space in spaces) {
     if (parseInt(space) < 9) {
-
-      // console.log("space");
       $("td#" + space).on("click", function(event) {
         if (board.spaces[event.target.id].markedBy === ""){
           var player = game.whoseTurn.mark;
@@ -53,48 +48,30 @@ $( document ).ready(function ( ) {
           alert("That space is already occupied")
         }
       });
-
     }
   };
 
-$("#start-button").click(function(){
-  resizeBoard();
-  $("#play-board").show();
-  $("#start-button").hide();
-});
+  $("#start-button").click(function(){
+    resizeBoard();
+    $("#play-board").show();
+    $("#start-button").hide();
+  });
 
-$("#restart").click(function(){
-  location.reload();
-})
+  $("#restart").click(function(){
+    location.reload();
+  });
 
-
-  // debugger;
-  //
-  // $(".container").css('width', '510px');
-  // var windowWidth = $(".container").width();
-  // $('.col-md-6').css('width', windowWidth);
-  // $('tr.mark-area').css('height', windowWidth/3);
-  // $('td.mark-area').css('line-height', (windowWidth/3 -25) + 'px');
-  // $(".container").css("width", "");
-  // setTimeout(resizeBoard(), 1000);
-  // resizeBoard();
   $('.col-md-6').css('width', '');
   $(window).on('resize', function() {
     resizeBoard();
   });
   $(window).on('resize', (console.log('window')));
-
 });
-
-// $(function() {
-//   $( "#dialog" ).dialog();
-// });
 
 function delayResize() {
   timeoutID = window.setTimeout(resizeBoard(), 1000);
 }
-// - 10
-// - 25
+
 function resizeBoard() {
   var width = $('.col-md-6').width();
   $('tr.mark-area').css('height', width/3 );
@@ -181,7 +158,6 @@ Game.prototype.nextTurn = function() {
 };
 
 Game.prototype.gameOver = function() {
-
   if (this.board.winner(this.player1)) {
     return true;
   } else if (this.board.winner(this.player2)) {

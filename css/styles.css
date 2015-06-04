@@ -3,9 +3,24 @@ td:hover {
   background-color: #000;
   color: #fff;
 }
+table {
+    overflow:hidden;
+    table-layout:fixed;
+}​
 
-tr {
-  height: 70px;
+tr.mark-area {
+  width: 540px;
+}
+
+td {
+  text-align:center;
+  font-size:25px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.col-md-6 {
+  width: 540px;
 }
 
 #account-info {

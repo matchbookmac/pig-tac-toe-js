@@ -13,6 +13,7 @@ $( document ).ready(function ( ) {
     space.attr("id", i);
   };
 
+
   for (space in spaces) {
     if (parseInt(space) < 9) {
 
@@ -34,8 +35,18 @@ $( document ).ready(function ( ) {
     }
   };
 
+  // debugger;
+
+  resizeBoard();
+  $(window).resize(resizeBoard());
+
 });
 
+function resizeBoard() {
+  var width = $('.col-md-6').width();
+  $('tr.mark-area').css('height', width/3 );
+  $('td.mark-area').css('line-height', (width/3 - 20) + 'px');
+};
 
 function Game() {
   this.player1 = new Player('X');

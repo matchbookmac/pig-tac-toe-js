@@ -1,3 +1,16 @@
+'use strict;'
+
+$( document ).ready(function ( ) {
+  var spaces = $('table#play-board').children().find('td');
+  for (var i = 0; i <= 8; i++ ) {
+    var space = $(spaces[i]);
+    space.attr("id", i);
+    space.on("click", function(event) {
+      
+    });
+  }
+});
+
 function Game() {
   this.player1 = new Player('X');
   this.player2 = new Player ('O');

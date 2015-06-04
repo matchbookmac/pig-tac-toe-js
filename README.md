@@ -3,8 +3,11 @@
 <a href="APP LINK IF APPLICABLE" target="#"><APP LINK NAME></a>
 
 David Garber (<a href="https://github.com/davidgarber" target="#">GitHub</a>)
+
 Steve Schneider (<a href="https://github.com/steve-schneider99" target="#">GitHub</a>)
+
 Ian MacDonald (<a href="https://github.com/matchbookmac" target="#">GitHub</a>)
+
 & Brent Bailey (<a href="https://github.com/brentagon" target="#">GitHub</a>)
 @ Epicodus Programming School, Portland, OR
 

@@ -3,32 +3,46 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
       <title>Pig-Tac-Toe</title>
   </head>
   <body>
+    <h1> Pig-Tac-Toe </h1>
     <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 start-game">
+          <h1 class="btn btn-primary stretch" role="button" id="start-button">Click Here To Start</h1>
+        </div>
+      </div>
       <div class="col-md-6 col-md-offset-3 vertical-center">
-        <table id="play-board" class="table">
-          <tbody>
-            <tr class="mark-area">
-              <td class="mark-area"></td>
-              <td class="mark-area"></td>
-              <td class="mark-area"></td>
-            </tr>
-            <tr class="mark-area">
-              <td class="mark-area"></td>
-              <td class="mark-area"></td>
-              <td class="mark-area"></td>
-            </tr>
-            <tr class="mark-area">
-              <td class="mark-area"></td>
-              <td class="mark-area"></td>
-              <td class="mark-area"></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row">
+          <table id="play-board" class="table">
+            <tbody>
+              <tr class="mark-area">
+                <td class="mark-area"></td>
+                <td class="mark-area"></td>
+                <td class="mark-area"></td>
+              </tr>
+              <tr class="mark-area">
+                <td class="mark-area"></td>
+                <td class="mark-area"></td>
+                <td class="mark-area"></td>
+              </tr>
+              <tr class="mark-area">
+                <td class="mark-area"></td>
+                <td class="mark-area"></td>
+                <td class="mark-area"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="dialog" title="Basic dialog">
+        <p>GAME OVER</p>
       </div>
     </div>
   </body>

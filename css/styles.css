@@ -1,22 +1,36 @@
+#play-board {
+  display: none;
+}
+
+body {
+  background:url(http://s6.favim.com/mini/140722/animal-emoji-ig-pig-Favim.com-1936126.jpg);
+}
+
 td:hover {
-  cursor: pointer;
-  background-color: #000;
+  cursor: url(http://www.emojibase.com/resources/img/emojis/hangouts/1f43d.png), auto;
+  /*background-color: #000;*/
+  background:url(http://usercontent2.hubimg.com/1463917_f520.jpg);
+  background-size:130%;
+  background-position: -60px;
   color: #fff;
 }
 table {
     overflow: hidden;
     table-layout: fixed;
     border: 2px solid black;
+    background:url(http://static.tumblr.com/5d57d5e2c4815897359c56bd4546b985/n9jaxcm/G17mrconq/tumblr_static_pigletcute.jpg);
+    background-size: 130%;
 }​
 
 td {
   overflow: hidden;
   white-space: nowrap;
+
 }
 
 td {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 3.5em;
   border: 1px solid black;
 }
 
@@ -26,4 +40,26 @@ td {
 
   display: flex;
   align-items: center;
+}
+
+.stretch {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 20%;
+  align-items:center;
+}
+
+.btn {
+  align:center;
+  font-family:Helvetica;
+}
+
+h1 {
+  text-align:center;
+  font-family:lobster;
+}
+
+#dialog {
+  display:none;
+  background:url(http://www.geeklegacy.com/wp-content/uploads/2013/03/following_sad-bacon.jpg);
 }

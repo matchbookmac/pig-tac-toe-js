@@ -6,6 +6,7 @@ $( document ).ready(function ( ) {
   var player1 = game.player1;
   var player2 = game.player2;
 
+  // delayResize();
 
   var spaces = $('table#play-board').children().find('td');
   for (var i = 0; i <= 8; i++ ) {
@@ -26,7 +27,8 @@ $( document ).ready(function ( ) {
           game.nextTurn();
           if (game.gameOver()) {
             if (board.winner(player1) || board.winner(player2)) {
-            alert("Game over! " + player + " wins this round.");
+            // alert("Game over! " + player + " wins this round.");
+              $( "#dialog" ).dialog();
             } else {
               alert("Game over! It's a draw.");
             }
@@ -40,9 +42,23 @@ $( document ).ready(function ( ) {
     }
   };
 
-  // debugger;
-  $('.col-md-6').css('width', '540px');
+$("#start-button").click(function(){
   resizeBoard();
+  $("#play-board").show();
+  $("#start-button").hide();
+});
+
+
+  // debugger;
+  //
+  // $(".container").css('width', '510px');
+  // var windowWidth = $(".container").width();
+  // $('.col-md-6').css('width', windowWidth);
+  // $('tr.mark-area').css('height', windowWidth/3);
+  // $('td.mark-area').css('line-height', (windowWidth/3 -25) + 'px');
+  // $(".container").css("width", "");
+  // setTimeout(resizeBoard(), 1000);
+  // resizeBoard();
   $('.col-md-6').css('width', '');
   $(window).on('resize', function() {
     resizeBoard();
@@ -50,11 +66,19 @@ $( document ).ready(function ( ) {
   $(window).on('resize', (console.log('window')));
 
 });
+
+// $(function() {
+//   $( "#dialog" ).dialog();
+// });
+
+function delayResize() {
+  timeoutID = window.setTimeout(resizeBoard(), 1000);
+}
 // - 10
 // - 25
 function resizeBoard() {
   var width = $('.col-md-6').width();
-  $('tr.mark-area').css('height', width/3  );
+  $('tr.mark-area').css('height', width/3 );
   $('td.mark-area').css('line-height', (width/3 -25) + 'px');
 };
 

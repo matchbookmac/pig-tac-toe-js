@@ -1,30 +1,13 @@
-function Game(player1, player2, board) {
-  this.player1 = player1;
-  this.player2 = player2;
-  this.board = board;
+function Game() {
+  this.player1 = new Player('X');
+  this.player2 = new Player ('O');
+  this.board = new Board();
   this.whoseTurn = 'X';
   this.turnCounter = 0;
 }
 
-function Board(spaces) {
-  this.spaces = spaces;
-}
-
-function Player(playerSymbol) {
-  this.mark = playerSymbol;
-}
-
-function Space(coordinateX, coordinateY, markedBy) {
-  this.x_coordinate = coordinateX;
-  this.y_coordinate = coordinateY;
-  this.markedBy = markedBy;
-}
-
-Space.prototype.mark_by = function(player) {
-  this.markedBy = player;
-};
-
-Board.prototype.create = function() {
+function Board() {
+  this.spaces = [];
   var space1 = new Space(1, 1, "");
   this.spaces.push(space1);
   var space2 = new Space(1, 2, "");
@@ -43,6 +26,20 @@ Board.prototype.create = function() {
   this.spaces.push(space8);
   var space9 = new Space(3, 3, "");
   this.spaces.push(space9);
+};
+
+function Player(playerSymbol) {
+  this.mark = playerSymbol;
+}
+
+function Space(coordinateX, coordinateY, markedBy) {
+  this.x_coordinate = coordinateX;
+  this.y_coordinate = coordinateY;
+  this.markedBy = markedBy;
+}
+
+Space.prototype.mark_by = function(player) {
+  this.markedBy = player;
 };
 
 Board.prototype.winner = function(player) {

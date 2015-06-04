@@ -4,6 +4,7 @@
 
 body {
   background:url(http://s6.favim.com/mini/140722/animal-emoji-ig-pig-Favim.com-1936126.jpg);
+  background-size: 10%;
 }
 
 td:hover {
@@ -30,8 +31,11 @@ td {
 
 td {
   text-align: center;
-  font-size: 3.5em;
+  font-size: 5em;
   border: 1px solid black;
+  color: pink;
+  text-shadow:-2px 0 brown, 0 2px brown, 2px 0 brown, 0 -2px brown;
+  font-family:lobster;
 }
 
 .vertical-center {
@@ -57,12 +61,16 @@ td {
 h1 {
   text-align:center;
   font-family:lobster;
+  font-size: 7em;
+  color: pink;
+  text-shadow:-2px 0 brown, 0 2px brown, 2px 0 brown, 0 -2px brown;
 }
 
 #dialog {
   display:none;
   background:url(http://www.geeklegacy.com/wp-content/uploads/2013/03/following_sad-bacon.jpg);
   background-size: 100%;
+  font-family: helvetica;
 }
 
 .over {

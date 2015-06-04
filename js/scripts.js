@@ -1,21 +1,37 @@
 'use strict;'
 
 $( document ).ready(function ( ) {
+  var game = new Game();
+  var board = game.board;
+  var player1 = game.player1;
+  var player2 = game.player2;
+
+
   var spaces = $('table#play-board').children().find('td');
   for (var i = 0; i <= 8; i++ ) {
     var space = $(spaces[i]);
     space.attr("id", i);
-    space.on("click", function(event) {
-      
-    });
-  }
+  };
+
+  for (space in spaces) {
+    if (parseInt(space) < 9) {
+
+      // console.log("space");
+      $("td#" + space).on("click", function(event) {
+        board.spaces[event.target.id].mark_by(game.whose_turn);
+        $(event.target).text(game.whoseTurn.mark)
+      });
+    }
+  };
+
 });
+
 
 function Game() {
   this.player1 = new Player('X');
   this.player2 = new Player ('O');
   this.board = new Board();
-  this.whoseTurn = 'X';
+  this.whoseTurn = this.player1;
   this.turnCounter = 0;
 }
 
@@ -79,10 +95,10 @@ Board.prototype.winner = function(player) {
 };
 
 Game.prototype.nextTurn = function() {
-  if (this.whoseTurn === 'X') {
-    this.whoseTurn = 'O';
-  } else if (this.whoseTurn==='O') {
-    this.whoseTurn = 'X';
+  if (this.whoseTurn === this.player1) {
+    this.whoseTurn = this.player2;
+  } else if (this.whoseTurn=== this.player2) {
+    this.whoseTurn = this.player1;
   } else {
   }
   this.turnCounter+=1;

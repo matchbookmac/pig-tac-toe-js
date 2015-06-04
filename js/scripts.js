@@ -20,10 +20,10 @@ $( document ).ready(function ( ) {
       // console.log("space");
       $("td#" + space).on("click", function(event) {
         if (board.spaces[event.target.id].markedBy === ""){
-        var player = game.whoseTurn.mark;
-        board.spaces[event.target.id].mark_by(game.whoseTurn);
-        $(event.target).text(player);
-        game.nextTurn();
+          var player = game.whoseTurn.mark;
+          board.spaces[event.target.id].mark_by(game.whoseTurn);
+          $(event.target).text(player);
+          game.nextTurn();
           if (game.gameOver()) {
             if (board.winner(player1) || board.winner(player2)) {
             alert("Game over! " + player + " wins this round.");
@@ -32,7 +32,7 @@ $( document ).ready(function ( ) {
             }
             location.reload();
           }
-         } else {
+        } else {
           alert("That space is already occupied")
         }
       });
@@ -50,7 +50,7 @@ $( document ).ready(function ( ) {
 function resizeBoard() {
   var width = $('.col-md-6').width();
   $('tr.mark-area').css('height', width/3 - 10 );
-  $('td.mark-area').css('line-height', (width/3 - 20) + 'px');
+  $('td.mark-area').css('line-height', (width/3 - 25) + 'px');
 };
 
 function Game() {
@@ -95,8 +95,8 @@ function Space(coordinateX, coordinateY, markedBy) {
 
 Space.prototype.mark_by = function(player) {
   if (this.markedBy === ""){
-  this.markedBy = player;
-}
+    this.markedBy = player;
+  }
 };
 
 Board.prototype.winner = function(player) {

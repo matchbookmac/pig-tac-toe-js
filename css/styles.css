@@ -6,9 +6,8 @@ td:hover {
 table {
     overflow:hidden;
     table-layout:fixed;
-    border: 1px solid black;
+    border: 2px solid black;
 }​
-
 
 td {
   overflow: hidden;
@@ -23,4 +22,12 @@ td {
   text-align:center;
   font-size:25px;
   border: 1px solid black;
+}
+
+.vertical-center {
+  min-height: 70%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 70vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
 }

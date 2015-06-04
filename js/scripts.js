@@ -28,8 +28,8 @@ $( document ).ready(function ( ) {
             if (board.winner(player1) || board.winner(player2)) {
               $( "#winner-text").append(player + " wins this round.")
               $( "#dialog" ).dialog({
-                height: 300,
-                width: 600,
+                // height: 300,
+                // width: 600,
                 modal: true,
                 title: "GAME OVA",
                 closeOnEscape: false,
@@ -38,8 +38,8 @@ $( document ).ready(function ( ) {
             } else {
               $( "#winner-text").append("It's a draw.")
               $( "#dialog" ).dialog({
-                height: 300,
-                width: 600,
+                // height: 300,
+                // width: 600,
                 modal: true,
                 title: "GAME OVA",
                 closeOnEscape: false,
@@ -139,7 +139,6 @@ Board.prototype.winner = function(player) {
   } else {
     return false;
   }
-
 };
 
 function Game() {

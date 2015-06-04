@@ -9,6 +9,7 @@ Steve Schneider (<a href="https://github.com/steve-schneider99" target="#">GitHu
 Ian MacDonald (<a href="https://github.com/matchbookmac" target="#">GitHub</a>)
 
 & Brent Bailey (<a href="https://github.com/brentagon" target="#">GitHub</a>)
+
 @ Epicodus Programming School, Portland, OR
 
 MIT License. Copyright (c) 2015 David Garber, Steve Schneider, Ian C. MacDonald, & Brent Bailey.
@@ -21,10 +22,7 @@ This app allows two players to play tic-tac-toe versus one another. Pig theme is
 
 ### Author(s)
 
-David Garber
-Steve Schneider
-Ian MacDonald
-Brent Bailey
+David Garber, Steve Schneider, Ian MacDonald, & Brent Bailey
 
 ### Setup
 

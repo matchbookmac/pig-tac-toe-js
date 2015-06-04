@@ -72,7 +72,8 @@ table {
 #dialog {
   display: none;
   background: url(img/sad-bacon.jpg);
-  background-size: 100%;
+  background-size: 145%;
+  background-position: -90px;
   font-family: helvetica;
 }
 

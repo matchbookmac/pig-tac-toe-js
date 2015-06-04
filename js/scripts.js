@@ -28,11 +28,26 @@ $( document ).ready(function ( ) {
           if (game.gameOver()) {
             if (board.winner(player1) || board.winner(player2)) {
             // alert("Game over! " + player + " wins this round.");
-              $( "#dialog" ).dialog();
+              $( "#winner-text").append(player + " wins this round.")
+              $( "#dialog" ).dialog({
+                height: 300,
+                width: 600,
+                modal: true,
+                title: "GAME OVA",
+                closeOnEscape: false,
+                dialogClass: "no-close"
+              });
             } else {
-              alert("Game over! It's a draw.");
+              $( "#winner-text").append("It's a draw.")
+              $( "#dialog" ).dialog({
+                height: 300,
+                width: 600,
+                modal: true,
+                title: "GAME OVA",
+                closeOnEscape: false,
+                dialogClass: "no-close"
+              });
             }
-            location.reload();
           }
         } else {
           alert("That space is already occupied")
@@ -47,6 +62,10 @@ $("#start-button").click(function(){
   $("#play-board").show();
   $("#start-button").hide();
 });
+
+$("#restart").click(function(){
+  location.reload();
+})
 
 
   // debugger;

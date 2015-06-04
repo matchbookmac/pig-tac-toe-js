@@ -7,7 +7,7 @@ body {
 }
 
 td:hover {
-  cursor: url(http://www.emojibase.com/resources/img/emojis/hangouts/1f43d.png), auto;
+  cursor: url("img/cursor.png"), auto;
   /*background-color: #000;*/
   background:url(http://usercontent2.hubimg.com/1463917_f520.jpg);
   background-size:130%;
@@ -62,4 +62,22 @@ h1 {
 #dialog {
   display:none;
   background:url(http://www.geeklegacy.com/wp-content/uploads/2013/03/following_sad-bacon.jpg);
+  background-size: 100%;
+}
+
+.over {
+  font-size: 4em;
+  color: pink;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+#winner-text {
+  text-align: center;
+  font-size: 1.5em;
+  color: pink;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }

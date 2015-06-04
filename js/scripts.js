@@ -41,16 +41,21 @@ $( document ).ready(function ( ) {
   };
 
   // debugger;
-
+  $('.col-md-6').css('width', '540px');
   resizeBoard();
-  $(window).resize(resizeBoard());
+  $('.col-md-6').css('width', '');
+  $(window).on('resize', function() {
+    resizeBoard();
+  });
+  $(window).on('resize', (console.log('window')));
 
 });
-
+// - 10
+// - 25
 function resizeBoard() {
   var width = $('.col-md-6').width();
-  $('tr.mark-area').css('height', width/3 - 10 );
-  $('td.mark-area').css('line-height', (width/3 - 25) + 'px');
+  $('tr.mark-area').css('height', width/3  );
+  $('td.mark-area').css('line-height', (width/3 -25) + 'px');
 };
 
 function Game() {

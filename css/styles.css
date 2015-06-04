@@ -1,35 +1,33 @@
-#play-board {
-  display: none;
-}
-
 body {
   background: url(img/pig-glasses.jpg);
   background-size: 10%;
 }
 
+/* Header */
+h1 {
+  text-align: center;
+  font-family: lobster;
+  font-size: 7em;
+  color: pink;
+  text-shadow: -2px 0 brown, 0 2px brown, 2px 0 brown, 0 -2px brown;
+}
+
+/* Board CSS */
+#play-board {
+  display: none;
+}
+
 td:hover {
   cursor: url("img/cursor.png"), auto;
-  /*background-color: #000;*/
   background: url(img/fat-pig.jpg);
   background-size: 130%;
   background-position: -60px;
   color: #fff;
 }
-table {
-  overflow: hidden;
-  table-layout: fixed;
-  border: 2px solid black;
-  background: url(img/cute-pig.jpg);
-  background-size: 130%;
-}​
 
 td {
   overflow: hidden;
   white-space: nowrap;
-
-}
-
-td {
   text-align: center;
   font-size: 5em;
   border: 1px solid black;
@@ -38,6 +36,15 @@ td {
   font-family: lobster;
 }
 
+table {
+  overflow: hidden;
+  table-layout: fixed;
+  border: 2px solid black;
+  background: url(img/cute-pig.jpg);
+  background-size: 130%;
+}​
+
+/* Center the board */
 .vertical-center {
   min-height: 70%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 70vh; /* These two lines are counted as one :-)       */
@@ -46,6 +53,7 @@ td {
   align-items: center;
 }
 
+/* Stretch for start button */
 .stretch {
   width: 40%;
   margin-left: 30%;
@@ -60,25 +68,12 @@ td {
   text-shadow: -1px 0 brown, 0 1px brown, 1px 0 brown, 0 -1px brown;
 }
 
-h1 {
-  text-align: center;
-  font-family: lobster;
-  font-size: 7em;
-  color: pink;
-  text-shadow: -2px 0 brown, 0 2px brown, 2px 0 brown, 0 -2px brown;
-}
-
+/* Game Over Dialog */
 #dialog {
   display: none;
   background: url(img/sad-bacon.jpg);
   background-size: 100%;
   font-family: helvetica;
-}
-
-.over {
-  font-size: 4em;
-  color: pink;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .no-close .ui-dialog-titlebar-close {
@@ -89,6 +84,12 @@ h1 {
   color: pink;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-align: center;
+}
+
+.over {
+  font-size: 4em;
+  color: pink;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #restart {

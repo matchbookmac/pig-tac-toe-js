@@ -1,17 +1,21 @@
 'use strict;'
 
 $( document ).ready(function ( ) {
+
+  // Create Game
   var game = new Game();
   var board = game.board;
   var player1 = game.player1;
   var player2 = game.player2;
 
+  // Associate spaces in window with spaces in game
   var spaces = $('table#play-board').children().find('td');
   for (var i = 0; i <= 8; i++ ) {
     var space = $(spaces[i]);
     space.attr("id", i);
   };
 
+  // Add click event for space
   for (space in spaces) {
     if (parseInt(space) < 9) {
       $("td#" + space).on("click", function(event) {
@@ -22,7 +26,6 @@ $( document ).ready(function ( ) {
           game.nextTurn();
           if (game.gameOver()) {
             if (board.winner(player1) || board.winner(player2)) {
-            // alert("Game over! " + player + " wins this round.");
               $( "#winner-text").append(player + " wins this round.")
               $( "#dialog" ).dialog({
                 height: 300,
@@ -51,16 +54,19 @@ $( document ).ready(function ( ) {
     }
   };
 
+  // Start Button
   $("#start-button").click(function(){
     resizeBoard();
     $("#play-board").show();
     $("#start-button").hide();
   });
 
+  // Play again button
   $("#restart").click(function(){
     location.reload();
   });
 
+  // Responsive game board
   $('.col-md-6').css('width', '');
   $(window).on('resize', function() {
     resizeBoard();
@@ -68,23 +74,28 @@ $( document ).ready(function ( ) {
   $(window).on('resize', (console.log('window')));
 });
 
-function delayResize() {
-  timeoutID = window.setTimeout(resizeBoard(), 1000);
-}
-
+// Resize board depending on column width
 function resizeBoard() {
   var width = $('.col-md-6').width();
   $('tr.mark-area').css('height', width/3 );
   $('td.mark-area').css('line-height', (width/3 -25) + 'px');
 };
 
-function Game() {
-  this.player1 = new Player('X');
-  this.player2 = new Player ('O');
-  this.board = new Board();
-  this.whoseTurn = this.player1;
-  this.turnCounter = 0;
+function Player(playerSymbol) {
+  this.mark = playerSymbol;
 }
+
+function Space(coordinateX, coordinateY, markedBy) {
+  this.x_coordinate = coordinateX;
+  this.y_coordinate = coordinateY;
+  this.markedBy = markedBy;
+}
+
+Space.prototype.mark_by = function(player) {
+  if (this.markedBy === ""){
+    this.markedBy = player;
+  }
+};
 
 function Board() {
   this.spaces = [];
@@ -106,22 +117,6 @@ function Board() {
   this.spaces.push(space8);
   var space9 = new Space(3, 3, "");
   this.spaces.push(space9);
-};
-
-function Player(playerSymbol) {
-  this.mark = playerSymbol;
-}
-
-function Space(coordinateX, coordinateY, markedBy) {
-  this.x_coordinate = coordinateX;
-  this.y_coordinate = coordinateY;
-  this.markedBy = markedBy;
-}
-
-Space.prototype.mark_by = function(player) {
-  if (this.markedBy === ""){
-    this.markedBy = player;
-  }
 };
 
 Board.prototype.winner = function(player) {
@@ -146,6 +141,14 @@ Board.prototype.winner = function(player) {
   }
 
 };
+
+function Game() {
+  this.player1 = new Player('X');
+  this.player2 = new Player ('O');
+  this.board = new Board();
+  this.whoseTurn = this.player1;
+  this.turnCounter = 0;
+}
 
 Game.prototype.nextTurn = function() {
   if (this.whoseTurn === this.player1) {

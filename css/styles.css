@@ -4,6 +4,10 @@ td:hover {
   color: #fff;
 }
 
+tr {
+  height: 70px;
+}
+
 #account-info {
   display: none;
 }

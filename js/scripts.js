@@ -18,8 +18,18 @@ $( document ).ready(function ( ) {
 
       // console.log("space");
       $("td#" + space).on("click", function(event) {
-        board.spaces[event.target.id].mark_by(game.whose_turn);
-        $(event.target).text(game.whoseTurn.mark)
+        var player = game.whoseTurn.mark;
+        board.spaces[event.target.id].mark_by(game.whoseTurn);
+        $(event.target).text(player);
+        game.nextTurn();
+        if (game.gameOver()) {
+          if (board.winner(player1) || board.winner(player2)) {
+          alert("Game over! " + player + " wins this round.");
+          } else {
+            alert("Game over! It's a draw.");
+          }
+          location.reload();
+        }
       });
     }
   };
